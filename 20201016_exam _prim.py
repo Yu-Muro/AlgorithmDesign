@@ -20,7 +20,6 @@ while len(unused) != 0:
          if mini > cost[i][j]:
             mini = cost[i][j]
             m, n = i, j
-   print(m, n)
    unused.pop(n) # 削除
    used[n] = m
    adjacent[m][n] = 1
