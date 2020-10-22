@@ -17,7 +17,7 @@ while vertex_cost[destination][0] == float("inf"):
    next_node, pre_node, min_cost = 99, 99, int(1e3) # 初期化
    for node in visited:
       for i in edge_cost[node]:
-         if edge_cost[node][i] + vertex_cost[node][0] < min_cost and i not in visited:
+         if edge_cost[node][i] + vertex_cost[node][0] < min_cost and i not in visited: # 最小コストを調べる
             min_cost = edge_cost[node][i] + vertex_cost[node][0]
             next_node = i
             pre_node = node
