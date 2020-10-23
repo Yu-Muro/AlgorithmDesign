@@ -12,7 +12,7 @@ for edge in edges:
    edge_cost[edge[1]][edge[2]] = edge_cost[edge[2]][edge[1]] = edge[0]
 
 visited.add(start)
-vertex_cost[0][0] = 0
+vertex_cost[start][0] = 0
 while vertex_cost[destination][0] == float("inf"):
    next_node, pre_node, min_cost = 99, 99, int(1e3) # 初期化
    for node in visited:
@@ -25,7 +25,7 @@ while vertex_cost[destination][0] == float("inf"):
    vertex_cost[next_node][0], vertex_cost[next_node][1] = min_cost, pre_node
 route = [destination]
 tmp = destination
-while tmp != 0:
+while tmp != start:
    tmp = vertex_cost[tmp][1]
    route.append(tmp)
 print("cost = {}, route = {}".format(vertex_cost[destination][0], route[::-1]))
