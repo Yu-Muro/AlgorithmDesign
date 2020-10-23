@@ -23,6 +23,7 @@ while vertex_cost[destination][0] == float("inf"):
             pre_node = node
    visited.add(next_node)
    vertex_cost[next_node][0], vertex_cost[next_node][1] = min_cost, pre_node
+
 route = [destination]
 tmp = destination
 while tmp != start:
