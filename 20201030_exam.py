@@ -35,7 +35,6 @@ while min(v2_use.values()) != 4:
         v2_use[tmp_v2] += 1
 
 pair_list.sort()
-print(pair_list)
 flag = [0]*5
 for l in pair_list:
     if flag[l[0] - 11] == 0:
