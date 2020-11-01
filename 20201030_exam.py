@@ -9,7 +9,6 @@ for k in v2:
 v1_use = {k: 0 for k in range(10, 0, -1)}
 v2_use = {k: 0 for k in range(15, 10, -1)}
 pair_list = []
-print("v2", v2)
 
 min_edges = 4
 while min(v2_use.values()) != 4:
@@ -17,7 +16,6 @@ while min(v2_use.values()) != 4:
     for k in v2:
         if len(v2[k]) == min_edges:
             check_list.append(k)
-    print("cl", check_list)
     check_list.sort(reverse = True)
     for k in check_list:
         tmp_pair = []
@@ -26,7 +24,6 @@ while min(v2_use.values()) != 4:
             if v1_use[j] != 2 and v2_use[k] != 4:
                 if sum < k + j:
                     if [k, j] not in pair_list:
-                        print(k, j)
                         tmp_pair = [k, j]
                         sum = k + j
                         tmp_v1, tmp_v2 = j, k
@@ -34,7 +31,15 @@ while min(v2_use.values()) != 4:
             min_edges += 1
             break
         pair_list.append(tmp_pair)
-        print(v1_use, v2_use, tmp_pair, pair_list, sep = "\n")
-        input()
         v1_use[tmp_v1] += 1
         v2_use[tmp_v2] += 1
+
+pair_list.sort()
+print(pair_list)
+flag = [0]*5
+for l in pair_list:
+    if flag[l[0] - 11] == 0:
+        flag[l[0] - 11] = 1
+        print(l[0], l[1], sep = " --- ")
+    else:
+        print("  ", l[1], sep = " --- ")
