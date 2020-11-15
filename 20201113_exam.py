@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-def base_10_to_n(X, n):
-    if (int(X/n)):
-        return base_10_to_n(int(X/n), n)+str(X%n)
-    return str(X%n)
+def base_10_to_n(x, n):
+    if int(x/n):
+        return base_10_to_n(int(x/n), n) + str(x%n)
+    return str(x%n)
 
 objects =[ ('1', 1), ('6', 6), ('9', 9), ('36', 36), ('81', 81 ), ('216', 216), ('729', 729), ('1296', 1296) ]
 quiz = [14, 50, 71, 146, 245]
